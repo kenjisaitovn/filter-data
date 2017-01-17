@@ -16,26 +16,30 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <!-- Styles -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="{{ asset('css/haiht.css') }}">
     </head>
     <body>
-        <hr class="col-xs-12">
+        <p></p>
         <div class="col-xs-12">
             <div class="col-xs-1 npdlr">
-                <input type="button" class="btn btn-primary" value="Filter Fb" id="btnFilterFb">
+                <button type="button" class="btn btn-primary" id="btnFilterFb"></button>
             </div>
+            <div class="col-xs-1 npdlr">
+                <button type="button" class="btn btn-primary" id="btnFilterGgQuery"></button>
+            </div>
+        </div>
+
+        <hr class="col-xs-12">
+
+        <div class="col-xs-12">
             <div class="col-xs-2 npdlr">
                 <input type="button" class="btn btn-danger" value="Do it again!" id="btnResetOffset">
             </div>
         </div>
 
         <hr class="col-xs-12">
-        <div class="col-xs-12">
-            <div class="col-xs-1 npdlr">
-                <input type="button" class="btn btn-primary" value="Filter Google query" id="btnFilterGgQuery">
-            </div>
-        </div>
-        <hr class="col-xs-12">
+
         <div class="col-xs-12">
             <label class="text-primary">Processing row... <span class="text-warning" id="processingRow"></span></label>
             <br>
@@ -43,7 +47,6 @@
             <br>
             <label class="text-primary">Total Inserted: <span class="text-warning" id="inserted"></span></label>
         </div>
-        <hr class="col-xs-12">
 
         <script>
             var apiPath = '{{ url('/filter') }}';
