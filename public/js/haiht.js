@@ -79,7 +79,7 @@ $(document).ready(function () {
                 setTimeout(startFilterGoogleQuery, 100);
             }else{
                 btnFilterGgQuery.prop('disabled', false);
-                btnFilterGgQuery.text(titleFilterFb);
+                btnFilterGgQuery.text(titleFilterGg);
             }
         });
     }
