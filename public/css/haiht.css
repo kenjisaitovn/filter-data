@@ -53,3 +53,7 @@ html, body {
     padding-left: 0;
     padding-right: 0;
 }
+.auto-scroll-bar {
+    max-height: 60px;
+    padding-right: 10px;
+}

@@ -17,13 +17,16 @@ class RequestallController extends BaseController
 {
     public function index()
     {
-//        $result = Requestall::where('id', '<', 100)->get();
-//        $response = [];
-//        foreach ($result as $item) {
-//            $response = array_merge($response, $this->decodeData($item));
-//        }
-//        echo "<pre>";var_dump($response);die;
-        return view('index');
+        return view('filter');
+    }
+
+    public function listFb()
+    {
+        $fb = new Fb;
+        $data['fb'] = $fb
+            ->orderBy('id','desc')
+            ->get();
+        return view('list-data')->with($data);
     }
 
     public function decodeData($input)
@@ -35,13 +38,10 @@ class RequestallController extends BaseController
 
     public function getData($data, $findString, $firstClassName, $secondClassName)
     {
-//        $arrayProcessedWillBeDelete = [];
         $result = [];
         foreach ($data as $item) {
-//            $idInDb = $item->id;
             $ipAddress = $item->ip;
             $a = $this->decodeData($item)['data'];
-//            echo "<pre>";var_dump($a);
             if($a){
                 foreach ($a as $k => $it) {
                     // check if domain contain string facebook.com and class name = email
@@ -71,8 +71,6 @@ class RequestallController extends BaseController
                 }
             }
         }
-//        echo "<pre>";var_dump($result);die;
-//        die;
         return $result;
     }
 
