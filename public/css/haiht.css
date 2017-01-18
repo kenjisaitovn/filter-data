@@ -57,3 +57,6 @@ html, body {
     max-height: 60px;
     padding-right: 10px;
 }
+button{
+    width:100%;
+}

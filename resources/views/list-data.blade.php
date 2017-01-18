@@ -4,6 +4,7 @@
         @include('elements.header')
     </head>
     <body>
+    @include('elements.nav')
         <div class="col-xs-12 container">
             <div class="auto-scroll-bar col-xs-12">
             <table class="table table-responsive table-hover col-xs-12">

@@ -17,7 +17,8 @@ class RequestallController extends BaseController
 {
     public function index()
     {
-        return view('filter');
+        $data['activeMenu'] = 'filter';
+        return view('filter')->with($data);
     }
 
     public function listFb()
@@ -26,6 +27,7 @@ class RequestallController extends BaseController
         $data['fb'] = $fb
             ->orderBy('id','desc')
             ->get();
+        $data['activeMenu'] = 'fb';
         return view('list-data')->with($data);
     }
 
