@@ -5,17 +5,20 @@ $(document).ready(function () {
     var spin = '<i class="fa fa-circle-o-notch fa-spin" style="font-size:13px"></i>';
     var titleFilterFb = 'Filter Fb';
     var titleFilterGg = 'Filter Google Query';
+    var titleFilterQuery = 'Filter other Query';
 
     var btnFilterFb = $('#btnFilterFb');
     var btnFilterGgQuery = $('#btnFilterGgQuery');
+    var btnFilterQuery = $('#btnFilterQuery');
 
     btnFilterFb.text(titleFilterFb);
     btnFilterGgQuery.text(titleFilterGg);
+    btnFilterQuery.text(titleFilterQuery);
 
     //Events
     btnFilterFb.click(function () {
-        btnFilterFb.prop('disabled', true);
-        btnFilterFb.html(titleFilterFb + ' ' + spin);
+        $(this).prop('disabled', true);
+        $(this).html(titleFilterFb + ' ' + spin);
         startFilterFbFilterFb();
     });
 
@@ -52,8 +55,8 @@ $(document).ready(function () {
     }
     // Filter google query
     btnFilterGgQuery.click(function () {
-        btnFilterGgQuery.prop('disabled', true);
-        btnFilterGgQuery.html(titleFilterGg + ' ' + spin);
+        $(this).prop('disabled', true);
+        $(this).html(titleFilterGg + ' ' + spin);
         startFilterGoogleQuery();
     });
     function startFilterGoogleQuery() {
@@ -80,6 +83,40 @@ $(document).ready(function () {
             }else{
                 btnFilterGgQuery.prop('disabled', false);
                 btnFilterGgQuery.text(titleFilterGg);
+            }
+        });
+    }
+    // Filter query
+    btnFilterQuery.click(function () {
+        $(this).prop('disabled', true);
+        $(this).html(titleFilterFb + ' ' + spin);
+        startFilterQuery();
+    });
+    function startFilterQuery() {
+        $.ajax({
+            type: 'JSON',
+            method: 'POST',
+            url: apiPath,
+            data: {
+                filterWhat: 'other',
+                offset: offset,
+                limit: limit,
+                _token: _token
+            }
+        }).done(function(response) {
+            $('.result').html(response);
+            if(response.countOriginData > 0){
+                // increase offset
+                offset = offset + limit;
+                totalInsertedRow += response.insertedRows;
+                $('#processingRow').text(offset);
+                $('#inserting').text(response.insertedRows);
+                $('#inserted').text(totalInsertedRow);
+
+                setTimeout(startFilterGoogleQuery, 100);
+            }else{
+                btnFilterQuery.prop('disabled', false);
+                btnFilterQuery.text(titleFilterFb);
             }
         });
     }

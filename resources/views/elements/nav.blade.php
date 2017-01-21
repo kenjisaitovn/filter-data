@@ -3,6 +3,7 @@
     <ul class="nav nav-tabs">
         <li role="presentation" class="{{ !empty($activeMenu) && $activeMenu == 'filter' ? 'active':'' }}"><a href="{{ url('/') }}">Filter Data</a></li>
         <li role="presentation" class="{{ !empty($activeMenu) && $activeMenu == 'fb' ? 'active':'' }}"><a href="{{ url('list-fb') }}">FB Account</a></li>
+        <li role="presentation" class="{{ !empty($activeMenu) && $activeMenu == 'other' ? 'active':'' }}"><a href="{{ url('list-query') }}">Other Query</a></li>
     </ul>
 </div>
 <br>

