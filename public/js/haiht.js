@@ -89,7 +89,7 @@ $(document).ready(function () {
     // Filter query
     btnFilterQuery.click(function () {
         $(this).prop('disabled', true);
-        $(this).html(titleFilterFb + ' ' + spin);
+        $(this).html(titleFilterQuery + ' ' + spin);
         startFilterQuery();
     });
     function startFilterQuery() {
@@ -116,7 +116,7 @@ $(document).ready(function () {
                 setTimeout(startFilterGoogleQuery, 100);
             }else{
                 btnFilterQuery.prop('disabled', false);
-                btnFilterQuery.text(titleFilterFb);
+                btnFilterQuery.text(titleFilterQuery);
             }
         });
     }
