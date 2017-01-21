@@ -6,7 +6,15 @@
     <body>
     @include('elements.nav')
         <div class="col-xs-12 container">
+            <div class="col-xs-12">
+                {{--<form action="{{ url('list-query') }}" method="get">--}}
+                    {{--<label for="">Number of rows--}}
+                        {{--<input type="text" value="{{ $limit }}" style="width:50px;" name="limit"></label>--}}
+                {{--</form>--}}
+
+            </div>
             <div class="auto-scroll-bar col-xs-12">
+            <div class="col-xs-12" style="text-align: center">{{ $other->render() }}</div>
             <table class="table table-responsive table-hover col-xs-12">
                 <thead>
                 <tr>
@@ -33,7 +41,10 @@
                 @endif
                 </tbody>
             </table>
+            <div class="col-xs-12" style="text-align: center">{{ $other->render() }}</div>
             </div>
+
         </div>
+
     </body>
 </html>

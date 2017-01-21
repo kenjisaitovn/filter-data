@@ -32,10 +32,12 @@ class RequestallController extends BaseController
         return view('list-fb')->with($data);
     }
 
-    public function listQuery()
+    public function listQuery(Request $request)
     {
+        $params = $request->all();
+
         $obj = new Other;
-        $data['other'] = $obj->get();
+        $data['other'] = $obj::paginate(100);
         $data['activeMenu'] = 'other';
         return view('list-query')->with($data);
     }
