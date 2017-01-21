@@ -115,51 +115,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list-query.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="list-query.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/list-query.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="107">
+              <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RequestallController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RequestallController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RequestallController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="39" column="43" lean-forward="false" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+            <state relative-caret-position="420">
+              <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
               <folding>
                 <element signature="e#40#85#0#PHP" expanded="true" />
-                <element signature="e#1051#1240#0#PHP" expanded="false" />
-                <element signature="e#1246#3024#0#PHP" expanded="false" />
-                <element signature="e#3828#4286#0#PHP" expanded="false" />
-                <element signature="e#4292#4997#0#PHP" expanded="false" />
-                <element signature="e#5003#5696#0#PHP" expanded="false" />
-                <element signature="e#7625#8330#0#PHP" expanded="false" />
-                <element signature="e#8336#8946#0#PHP" expanded="false" />
-                <marker date="1485026154000" expanded="true" signature="7268:7341" ph="..." />
+                <element signature="e#1450#1639#0#PHP" expanded="false" />
+                <element signature="e#1645#3423#0#PHP" expanded="false" />
+                <element signature="e#4227#4685#0#PHP" expanded="false" />
+                <element signature="e#4691#5396#0#PHP" expanded="false" />
+                <element signature="e#5402#6095#0#PHP" expanded="false" />
+                <element signature="e#8024#8729#0#PHP" expanded="false" />
+                <element signature="e#8735#9345#0#PHP" expanded="false" />
+                <marker date="1485028508000" expanded="true" signature="7667:7740" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="haiht.other" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/5663bfbf/cb3b8695-f035-4626-8afa-a256753bca4f/haiht.other">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -181,6 +165,7 @@
       <find>getOtherData</find>
       <find>insertOther</find>
       <find>$fb</find>
+      <find>&lt;a</find>
     </findStrings>
     <replaceStrings>
       <replace>$other</replace>
@@ -205,8 +190,8 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/elements/nav.blade.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/resources/views/list-query.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RequestallController.php" />
+        <option value="$PROJECT_DIR$/resources/views/list-query.blade.php" />
       </list>
     </option>
   </component>
@@ -414,12 +399,12 @@
       <workItem from="1484919585602" duration="24000" />
       <workItem from="1484965947147" duration="1031000" />
       <workItem from="1485005366392" duration="147000" />
-      <workItem from="1485023660379" duration="1815000" />
+      <workItem from="1485023660379" duration="4323000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18402000" />
+    <option name="totallyTimeSpent" value="20910000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="35" y="23" width="1245" height="777" extended-state="6" />
@@ -480,14 +465,14 @@
           <caret line="215" column="35" lean-forward="false" selection-start-line="215" selection-start-column="35" selection-end-line="215" selection-end-column="35" />
           <folding>
             <element signature="e#40#85#0#PHP" expanded="true" />
-            <element signature="e#1051#1240#0#PHP" expanded="false" />
-            <element signature="e#1246#3024#0#PHP" expanded="false" />
-            <element signature="e#3828#4286#0#PHP" expanded="false" />
-            <element signature="e#4292#4997#0#PHP" expanded="false" />
-            <element signature="e#5003#5696#0#PHP" expanded="false" />
-            <element signature="e#7625#8330#0#PHP" expanded="false" />
-            <element signature="e#8336#8946#0#PHP" expanded="false" />
-            <marker date="1485026154000" expanded="true" signature="7268:7341" ph="..." />
+            <element signature="e#1450#1639#0#PHP" expanded="false" />
+            <element signature="e#1645#3423#0#PHP" expanded="false" />
+            <element signature="e#4227#4685#0#PHP" expanded="false" />
+            <element signature="e#4691#5396#0#PHP" expanded="false" />
+            <element signature="e#5402#6095#0#PHP" expanded="false" />
+            <element signature="e#8024#8729#0#PHP" expanded="false" />
+            <element signature="e#8735#9345#0#PHP" expanded="false" />
+            <marker date="1485028508000" expanded="true" signature="7667:7740" ph="..." />
           </folding>
         </state>
       </provider>
@@ -547,14 +532,14 @@
           <caret line="215" column="35" lean-forward="false" selection-start-line="215" selection-start-column="35" selection-end-line="215" selection-end-column="35" />
           <folding>
             <element signature="e#40#85#0#PHP" expanded="true" />
-            <element signature="e#1051#1240#0#PHP" expanded="false" />
-            <element signature="e#1246#3024#0#PHP" expanded="false" />
-            <element signature="e#3828#4286#0#PHP" expanded="false" />
-            <element signature="e#4292#4997#0#PHP" expanded="false" />
-            <element signature="e#5003#5696#0#PHP" expanded="false" />
-            <element signature="e#7625#8330#0#PHP" expanded="false" />
-            <element signature="e#8336#8946#0#PHP" expanded="false" />
-            <marker date="1485026154000" expanded="true" signature="7268:7341" ph="..." />
+            <element signature="e#1450#1639#0#PHP" expanded="false" />
+            <element signature="e#1645#3423#0#PHP" expanded="false" />
+            <element signature="e#4227#4685#0#PHP" expanded="false" />
+            <element signature="e#4691#5396#0#PHP" expanded="false" />
+            <element signature="e#5402#6095#0#PHP" expanded="false" />
+            <element signature="e#8024#8729#0#PHP" expanded="false" />
+            <element signature="e#8735#9345#0#PHP" expanded="false" />
+            <marker date="1485028508000" expanded="true" signature="7667:7740" ph="..." />
           </folding>
         </state>
       </provider>
@@ -598,14 +583,14 @@
           <caret line="47" column="43" lean-forward="true" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
           <folding>
             <element signature="e#40#85#0#PHP" expanded="true" />
-            <element signature="e#1051#1240#0#PHP" expanded="false" />
-            <element signature="e#1246#3024#0#PHP" expanded="false" />
-            <element signature="e#3828#4286#0#PHP" expanded="false" />
-            <element signature="e#4292#4997#0#PHP" expanded="false" />
-            <element signature="e#5003#5696#0#PHP" expanded="false" />
-            <element signature="e#7625#8330#0#PHP" expanded="false" />
-            <element signature="e#8336#8946#0#PHP" expanded="false" />
-            <marker date="1485026154000" expanded="true" signature="7268:7341" ph="..." />
+            <element signature="e#1450#1639#0#PHP" expanded="false" />
+            <element signature="e#1645#3423#0#PHP" expanded="false" />
+            <element signature="e#4227#4685#0#PHP" expanded="false" />
+            <element signature="e#4691#5396#0#PHP" expanded="false" />
+            <element signature="e#5402#6095#0#PHP" expanded="false" />
+            <element signature="e#8024#8729#0#PHP" expanded="false" />
+            <element signature="e#8735#9345#0#PHP" expanded="false" />
+            <marker date="1485028508000" expanded="true" signature="7667:7740" ph="..." />
           </folding>
         </state>
       </provider>
@@ -676,14 +661,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#40#85#0#PHP" expanded="true" />
-            <element signature="e#1051#1240#0#PHP" expanded="false" />
-            <element signature="e#1246#3024#0#PHP" expanded="false" />
-            <element signature="e#3828#4286#0#PHP" expanded="false" />
-            <element signature="e#4292#4997#0#PHP" expanded="false" />
-            <element signature="e#5003#5696#0#PHP" expanded="false" />
-            <element signature="e#7625#8330#0#PHP" expanded="false" />
-            <element signature="e#8336#8946#0#PHP" expanded="false" />
-            <marker date="1485026154000" expanded="true" signature="7268:7341" ph="..." />
+            <element signature="e#1450#1639#0#PHP" expanded="false" />
+            <element signature="e#1645#3423#0#PHP" expanded="false" />
+            <element signature="e#4227#4685#0#PHP" expanded="false" />
+            <element signature="e#4691#5396#0#PHP" expanded="false" />
+            <element signature="e#5402#6095#0#PHP" expanded="false" />
+            <element signature="e#8024#8729#0#PHP" expanded="false" />
+            <element signature="e#8735#9345#0#PHP" expanded="false" />
+            <marker date="1485028508000" expanded="true" signature="7667:7740" ph="..." />
           </folding>
         </state>
       </provider>
@@ -744,14 +729,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#40#85#0#PHP" expanded="true" />
-            <element signature="e#1051#1240#0#PHP" expanded="false" />
-            <element signature="e#1246#3024#0#PHP" expanded="false" />
-            <element signature="e#3828#4286#0#PHP" expanded="false" />
-            <element signature="e#4292#4997#0#PHP" expanded="false" />
-            <element signature="e#5003#5696#0#PHP" expanded="false" />
-            <element signature="e#7625#8330#0#PHP" expanded="false" />
-            <element signature="e#8336#8946#0#PHP" expanded="false" />
-            <marker date="1485026154000" expanded="true" signature="7268:7341" ph="..." />
+            <element signature="e#1450#1639#0#PHP" expanded="false" />
+            <element signature="e#1645#3423#0#PHP" expanded="false" />
+            <element signature="e#4227#4685#0#PHP" expanded="false" />
+            <element signature="e#4691#5396#0#PHP" expanded="false" />
+            <element signature="e#5402#6095#0#PHP" expanded="false" />
+            <element signature="e#8024#8729#0#PHP" expanded="false" />
+            <element signature="e#8735#9345#0#PHP" expanded="false" />
+            <marker date="1485028508000" expanded="true" signature="7667:7740" ph="..." />
           </folding>
         </state>
       </provider>
@@ -903,6 +888,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/elements/nav.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="23" lean-forward="true" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/5663bfbf/cb3b8695-f035-4626-8afa-a256753bca4f/haiht.other">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -916,40 +909,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/elements/nav.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RequestallController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="23" lean-forward="true" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="420">
+          <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+          <folding>
+            <element signature="e#40#85#0#PHP" expanded="true" />
+            <element signature="e#1450#1639#0#PHP" expanded="false" />
+            <element signature="e#1645#3423#0#PHP" expanded="false" />
+            <element signature="e#4227#4685#0#PHP" expanded="false" />
+            <element signature="e#4691#5396#0#PHP" expanded="false" />
+            <element signature="e#5402#6095#0#PHP" expanded="false" />
+            <element signature="e#8024#8729#0#PHP" expanded="false" />
+            <element signature="e#8735#9345#0#PHP" expanded="false" />
+            <marker date="1485028508000" expanded="true" signature="7667:7740" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/list-query.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="107">
+          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RequestallController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="39" column="43" lean-forward="false" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
-          <folding>
-            <element signature="e#40#85#0#PHP" expanded="true" />
-            <element signature="e#1051#1240#0#PHP" expanded="false" />
-            <element signature="e#1246#3024#0#PHP" expanded="false" />
-            <element signature="e#3828#4286#0#PHP" expanded="false" />
-            <element signature="e#4292#4997#0#PHP" expanded="false" />
-            <element signature="e#5003#5696#0#PHP" expanded="false" />
-            <element signature="e#7625#8330#0#PHP" expanded="false" />
-            <element signature="e#8336#8946#0#PHP" expanded="false" />
-            <marker date="1485026154000" expanded="true" signature="7268:7341" ph="..." />
           </folding>
         </state>
       </provider>

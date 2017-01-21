@@ -6,12 +6,10 @@
     <body>
     @include('elements.nav')
         <div class="col-xs-12 container">
-            <div class="col-xs-12">
-                {{--<form action="{{ url('list-query') }}" method="get">--}}
-                    {{--<label for="">Number of rows--}}
-                        {{--<input type="text" value="{{ $limit }}" style="width:50px;" name="limit"></label>--}}
-                {{--</form>--}}
-
+            <div class="col-xs-2">
+                @if( !empty($filterBy) )
+                <label>{{ 'Filter by: '.$filterBy }} <a href="{{ url('list-query') }}" title="Clear filter"><i class="fa fa-times"></i></a> </label>
+                @endif
             </div>
             <div class="auto-scroll-bar col-xs-12">
             <div class="col-xs-12" style="text-align: center">{{ $other->render() }}</div>
@@ -22,7 +20,7 @@
                     <th>Domain</th>
                     <th>Class</th>
                     <th>Value</th>
-                    <th>Ip</th>
+                    <th>ip address</th>
                     <th>Created at</th>
                 </tr>
                 </thead>
@@ -31,10 +29,11 @@
                     @foreach($other as $k=>$v)
                     <tr>
                         <th scope="row">{{ $k+1 }}</th>
-                        <td>{{ $v['dm'] }}</td>
+                        <td><a href="{{ url('list-query?filter-domain='.$v['dm']) }}" title="Click to filter by this domain">{{ $v['dm'] }}</a> <a target="_blank" href="http://{{ $v['dm'] }}" title="Visit website"><i class="fa fa-external-link"></i></a> </td>
                         <td>{{ $v['cn'] }}</td>
                         <td>{{ $v['vl'] }}</td>
-                        <td>{{ $v['ip'] }}</td>
+                        <td><a href="{{ url('list-query?filter-ip='.$v['ip']) }}" title="Click to filter by this Ip">{{ $v['ip'] }}</a>
+                            <a target="_blank" href="http://whatismyipaddress.com/ip/{{ $v['ip'] }}"><i class="fa fa-info-circle"></i></a>  </td>
                         <td>{{ $v['created_at'] }}</td>
                     </tr>
                     @endforeach

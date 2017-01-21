@@ -37,7 +37,16 @@ class RequestallController extends BaseController
         $params = $request->all();
 
         $obj = new Other;
-        $data['other'] = $obj::paginate(100);
+        if( !empty($params['filter-domain']) ){
+            $data['other'] = $obj::where('dm', '=', $params['filter-domain'])->paginate(100);
+            $data['filterBy'] = 'domain';
+        }elseif( !empty($params['filter-ip']) ){
+            $data['other'] = $obj::where('ip', '=', $params['filter-ip'])->paginate(100);
+            $data['filterBy'] = 'ip address';
+        }else{
+            $data['other'] = $obj::paginate(100);
+        }
+
         $data['activeMenu'] = 'other';
         return view('list-query')->with($data);
     }
