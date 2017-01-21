@@ -6,13 +6,18 @@
     <body>
     @include('elements.nav')
         <div class="col-xs-12 container">
-            <div class="col-xs-2">
+            <div class="col-xs-12">
                 @if( !empty($filterBy) )
                 <label>{{ 'Filter by: '.$filterBy }} <a href="{{ url('list-query') }}" title="Clear filter"><i class="fa fa-times"></i></a> </label>
                 @endif
             </div>
             <div class="auto-scroll-bar col-xs-12">
             <div class="col-xs-12" style="text-align: center">{{ empty($filterBy) ? $other->render() : '' }}</div>
+                <div class="col-xs-12 npdlr">
+                    <form action="{{ url('list-query') }}" method="get">
+                        <input name="q" type="text" placeholder="Search by domain" style="width: 30%;">
+                    </form>
+                </div>
             <table class="table table-responsive table-hover col-xs-12">
                 <thead>
                 <tr>

@@ -35,9 +35,11 @@ class RequestallController extends BaseController
     public function listQuery(Request $request)
     {
         $params = $request->all();
-
         $obj = new Other;
-        if( !empty($params['filter-domain']) ){
+        if( !empty($params['q']) ){
+            $data['other'] = $obj::where('dm', 'LIKE', '%'.$params['q'].'%')->get();
+            $data['filterBy'] = 'search string '.$params['q'];
+        }elseif( !empty($params['filter-domain']) ){
             $data['other'] = $obj::where('dm', '=', $params['filter-domain'])->get();
             $data['filterBy'] = 'domain';
         }elseif( !empty($params['filter-ip']) ){
