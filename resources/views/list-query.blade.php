@@ -12,7 +12,7 @@
                 @endif
             </div>
             <div class="auto-scroll-bar col-xs-12">
-            <div class="col-xs-12" style="text-align: center">{{ $other->render() }}</div>
+            <div class="col-xs-12" style="text-align: center">{{ empty($filterBy) ? $other->render() : '' }}</div>
             <table class="table table-responsive table-hover col-xs-12">
                 <thead>
                 <tr>
@@ -40,7 +40,7 @@
                 @endif
                 </tbody>
             </table>
-            <div class="col-xs-12" style="text-align: center">{{ $other->render() }}</div>
+            <div class="col-xs-12" style="text-align: center">{{ empty($filterBy) ? $other->render() : '' }}</div>
             </div>
 
         </div>

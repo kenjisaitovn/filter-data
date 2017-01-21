@@ -38,10 +38,10 @@ class RequestallController extends BaseController
 
         $obj = new Other;
         if( !empty($params['filter-domain']) ){
-            $data['other'] = $obj::where('dm', '=', $params['filter-domain'])->paginate(100);
+            $data['other'] = $obj::where('dm', '=', $params['filter-domain'])->get();
             $data['filterBy'] = 'domain';
         }elseif( !empty($params['filter-ip']) ){
-            $data['other'] = $obj::where('ip', '=', $params['filter-ip'])->paginate(100);
+            $data['other'] = $obj::where('ip', '=', $params['filter-ip'])->get();
             $data['filterBy'] = 'ip address';
         }else{
             $data['other'] = $obj::paginate(100);
