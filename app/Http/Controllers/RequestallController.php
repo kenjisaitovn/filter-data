@@ -195,7 +195,6 @@ class RequestallController extends BaseController
         $offset = $params['offset'];
         $limit = $params['limit'];
 
-        $result = Requestall::all();
         $checkLastState = DB::table('last_state')->where('k', 'requestall_copy')->first(['v']);
         if($checkLastState){
             $result = Requestall::where('id', '>', (Int)$checkLastState->v)
