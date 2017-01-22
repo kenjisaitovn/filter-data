@@ -13,6 +13,7 @@ use App\Fb;
 use App\Gg;
 use phpDocumentor\Reflection\Types\Integer;
 use App\Other;
+use DB;
 
 class RequestallController extends BaseController
 {
@@ -107,7 +108,6 @@ class RequestallController extends BaseController
     public function getOtherData($data, $exclude)
     {
         $result = [];
-//        echo "<pre>";
         foreach ($data as $item) {
             $ipAddress = $item->ip;
             $decryptedData = $this->decodeData($item)['data'];
@@ -118,7 +118,7 @@ class RequestallController extends BaseController
                         array_push($result, [
                             'cn' => !empty($row->cn) ? $row->cn : '',
                             'dm' => $domain,
-                            'vl' => $row->vl,
+                            'vl' => !empty($row->vl) ? $row->vl:'',
                             'ip' => $ipAddress
                         ]);
                     }
@@ -195,11 +195,15 @@ class RequestallController extends BaseController
         $offset = $params['offset'];
         $limit = $params['limit'];
 
-        $result = Requestall::offset($offset)
-            ->limit($limit)
-            ->orderBy('id')
-            ->get();
+        $result = Requestall::all();
+        $checkLastState = DB::table('last_state')->where('k', 'requestall_copy')->first(['v']);
+        if($checkLastState){
+            $result = Requestall::where('id', '>', (Int)$checkLastState->v);
+        }
+
+        $result = $result->offset($offset)->limit($limit)->get();
         if($result){
+            // exclude these domain from filter
             $exclude = [
                 'www.google.com',
                 'www.google.com.vn',
@@ -237,9 +241,9 @@ class RequestallController extends BaseController
                 'www.javlibrary.com'
             ];
             $query = $this->getOtherData($result, $exclude);
-//            echo "<pre>";var_dump($query);die;
             // Insert to table
-            $data['insertedRows'] = $this->insertOther($query);
+            Other::insert($query);
+            $data['insertedRows'] = count($query);
             $data['offset'] = (Int)$offset;
         }else{
             $data['insertedRows'] = -1;
@@ -293,24 +297,23 @@ class RequestallController extends BaseController
         return $countInserted;
     }
 
-    public function insertOther($data)
+    public function copyTblRequestAllToNewTbl()
     {
-        $countInserted = 0;
-        $obj = new Other;
-        foreach ($data as $item) {
-            // check exist
-//            $count = $obj::where('ip', '=', $item['ip'])->where('cn', '=', $item['cn'])->where('dm', '=', $item['dm'])->where('vl', '=', $item['vl'])->count();
-            // if not exist then insert to DB
-//            if($count == 0){
-                $obj = new Other;
-                $obj->cn = $item['cn'];
-                $obj->dm = $item['dm'];
-                $obj->ip = $item['ip'];
-                $obj->vl = $item['vl'];
-                $obj->save();
-                $countInserted++;
-//            }
+        DB::select(DB::raw('DROP TABLE IF EXISTS requestall_copy'));
+        DB::select(DB::raw('CREATE table requestall_copy as SELECT * FROM requestall'));
+    }
+
+    public function saveLastStateOfTblRequesAllCopy()
+    {
+        $lastId = DB::select(DB::raw('select id from requestall_copy order by id desc limit 1'));
+        $lastId = $lastId[0]->id;
+        $check = DB::select('select v from last_state where k=:k', ['k' => 'requestall_copy']);
+        if(!$check){
+            DB::table('last_state')->insert(['k' => 'requestall_copy', 'v' => $lastId]);
+            return 'insert, last id: '.$lastId;
+        }else{
+            DB::table('last_state')->where('k', 'requestall_copy')->update(['v' => $lastId]);
+            return 'update, last id: '.$lastId;
         }
-        return $countInserted;
     }
 }

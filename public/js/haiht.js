@@ -30,7 +30,7 @@ $(document).ready(function () {
         $.ajax({
             type: 'JSON',
             method: 'POST',
-            url: apiPath,
+            url: currentPath + '/filter',
             data: {
                 filterWhat: 'fb',
                 offset: offset,
@@ -63,7 +63,7 @@ $(document).ready(function () {
         $.ajax({
             type: 'JSON',
             method: 'POST',
-            url: apiPath,
+            url: currentPath + '/filter',
             data: {
                 filterWhat: 'gg',
                 offset: offset,
@@ -90,13 +90,23 @@ $(document).ready(function () {
     btnFilterQuery.click(function () {
         $(this).prop('disabled', true);
         $(this).html(titleFilterQuery + ' ' + spin);
-        startFilterQuery();
+        // copy tbl requestall to requestall_copy
+        $.ajax({
+            type: 'JSON',
+            method: 'GET',
+            url: currentPath + '/copy-table-requestall-to-new-table'
+        }).done(function(response) {
+            // process on tbl requestall_copy
+            startFilterQuery();
+            // End
+        });
+
     });
     function startFilterQuery() {
         $.ajax({
             type: 'JSON',
             method: 'POST',
-            url: apiPath,
+            url: currentPath + '/filter',
             data: {
                 filterWhat: 'other',
                 offset: offset,
@@ -113,11 +123,23 @@ $(document).ready(function () {
                 $('#inserting').text(response.insertedRows);
                 $('#inserted').text(totalInsertedRow);
 
-                setTimeout(startFilterGoogleQuery, 100);
+                setTimeout(startFilterQuery, 100);
             }else{
                 btnFilterQuery.prop('disabled', false);
                 btnFilterQuery.text(titleFilterQuery);
+                saveLastStateOfTblRequesAllCopy();
             }
         });
     }
+    var saveLastStateOfTblRequesAllCopy = function () {
+        $.ajax({
+            type: 'JSON',
+            method: 'GET',
+            url: currentPath + '/saveLastStateOfTblRequesAllCopy'
+        }).done(function(response) {
+            console.log('saved last state', response);
+        });
+    };
+
+    // End document ready
 });

@@ -40,8 +40,8 @@
         </div>
 
         <script>
-            var apiPath = '{{ url('/filter') }}';
             var _token = '{{ csrf_token() }}';
+            var currentPath = '{{ url('/') }}';
         </script>
     </body>
 </html>
