@@ -14,9 +14,20 @@ use App\Gg;
 use phpDocumentor\Reflection\Types\Integer;
 use App\Other;
 use DB;
+use Auth;
 
 class RequestallController extends BaseController
 {
+    public function __construct()
+    {
+        if(Auth::check()){
+            $userEmail = Auth::user()->email;
+            if($userEmail !== 'haiht369@gmail.com'){
+                die('You do not have permission to access this area!');
+            }
+        }
+    }
+
     public function index()
     {
         $data['activeMenu'] = 'filter';
