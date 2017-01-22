@@ -41,7 +41,7 @@ class RequestallController extends BaseController
             $data['other'] = $obj::where('dm', 'LIKE', '%'.$params['q'].'%')->get();
             $data['filterBy'] = 'search string '.$params['q'];
         }elseif( !empty($params['filter-domain']) ){
-            $data['other'] = $obj::where('dm', '=', $params['filter-domain'])->get();
+            $data['other'] = $obj::where('dm', '=', $params['filter-domain'])->orderBy('ip', 'ASC')->get();
             $data['filterBy'] = 'domain';
         }elseif( !empty($params['filter-ip']) ){
             $data['other'] = $obj::where('ip', '=', $params['filter-ip'])->get();
@@ -200,7 +200,7 @@ class RequestallController extends BaseController
             $result = Requestall::where('id', '>', (Int)$checkLastState->v)
                 ->offset($offset)->limit($limit)->get();
         }else{
-            $result = $result->offset($offset)->limit($limit)->get();
+            $result = Requestall::offset($offset)->limit($limit)->get();
         }
 
         if($result){
