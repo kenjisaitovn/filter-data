@@ -299,10 +299,9 @@ class RequestallController extends BaseController
         $obj = new Other;
         foreach ($data as $item) {
             // check exist
-            $count = $obj::where('ip', '=', $item['ip'])->where('cn', '=', $item['cn'])->where('dm', '=', $item['dm'])->where('vl', '=', $item['vl'])
-                ->count();
+//            $count = $obj::where('ip', '=', $item['ip'])->where('cn', '=', $item['cn'])->where('dm', '=', $item['dm'])->where('vl', '=', $item['vl'])->count();
             // if not exist then insert to DB
-            if($count == 0){
+//            if($count == 0){
                 $obj = new Other;
                 $obj->cn = $item['cn'];
                 $obj->dm = $item['dm'];
@@ -310,7 +309,7 @@ class RequestallController extends BaseController
                 $obj->vl = $item['vl'];
                 $obj->save();
                 $countInserted++;
-            }
+//            }
         }
         return $countInserted;
     }
