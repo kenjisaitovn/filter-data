@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="803ccc10-2efe-4667-b9e8-891372317229" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RequestallController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RequestallController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -75,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list-query.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="list-query.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/list-query.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+            <state relative-caret-position="397">
+              <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -107,7 +105,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RequestallController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RequestallController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RequestallController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="267">
@@ -177,6 +175,7 @@
       <find>apiPath</find>
       <find>saveLastStateOfTblRequesAllCopy</find>
       <find>insertOther</find>
+      <find>$firstIp</find>
     </findStrings>
     <replaceStrings>
       <replace>$other</replace>
@@ -202,11 +201,11 @@
         <option value="$PROJECT_DIR$/storage/framework/views/36ffc9c0472cbe49708adca637cc573fa4005e93.php" />
         <option value="$PROJECT_DIR$/app/Requestall.php" />
         <option value="$PROJECT_DIR$/resources/views/filter.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/list-query.blade.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/cb3b8695-f035-4626-8afa-a256753bca4f/console.sql" />
         <option value="$PROJECT_DIR$/public/js/haiht.js" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RequestallController.php" />
+        <option value="$PROJECT_DIR$/resources/views/list-query.blade.php" />
       </list>
     </option>
   </component>
@@ -469,12 +468,12 @@
       <workItem from="1484965947147" duration="1031000" />
       <workItem from="1485005366392" duration="147000" />
       <workItem from="1485023660379" duration="6568000" />
-      <workItem from="1485056686245" duration="8308000" />
+      <workItem from="1485056686245" duration="9383000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31463000" />
+    <option name="totallyTimeSpent" value="32538000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="35" y="23" width="1245" height="777" extended-state="6" />
@@ -489,7 +488,7 @@
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917705" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21167883" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19700748" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18121363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18121363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -928,14 +927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/list-query.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Requestall.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -1002,6 +993,14 @@
             <marker date="1485067118000" expanded="true" signature="10119:10174" ph="select id fr... requestall_copy" />
             <marker date="1485067118000" expanded="true" signature="10242:10277" ph="select v fro... last_state" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/list-query.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
