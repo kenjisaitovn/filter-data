@@ -254,7 +254,13 @@ class RequestallController extends BaseController
             ];
             $query = $this->getOtherData($result, $exclude);
             // Insert to table
-            Other::insert($query);
+            $newArr = [];
+            foreach ($query as $key=>$model) {
+                $newArr[$key] = $model;
+                $newArr[$key]['created_at'] = \Carbon\Carbon::now();
+                $newArr[$key]['updated_at'] = \Carbon\Carbon::now();
+            }
+            Other::insert($newArr);
             $data['insertedRows'] = count($query);
             $data['offset'] = (Int)$offset;
         }else{
