@@ -198,10 +198,12 @@ class RequestallController extends BaseController
         $result = Requestall::all();
         $checkLastState = DB::table('last_state')->where('k', 'requestall_copy')->first(['v']);
         if($checkLastState){
-            $result = Requestall::where('id', '>', (Int)$checkLastState->v);
+            $result = Requestall::where('id', '>', (Int)$checkLastState->v)
+                ->offset($offset)->limit($limit)->get();
+        }else{
+            $result = $result->offset($offset)->limit($limit)->get();
         }
 
-        $result = $result->offset($offset)->limit($limit)->get();
         if($result){
             // exclude these domain from filter
             $exclude = [
