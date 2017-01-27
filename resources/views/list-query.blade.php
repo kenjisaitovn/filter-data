@@ -35,7 +35,7 @@
                     <tr>
                         <th scope="row">{{ $k+1 }}</th>
                         <td><a href="{{ url('list-query?filter-domain='.$v['dm']) }}" title="Click to filter by this domain">{{ $v['dm'] }}</a> <a target="_blank" href="http://{{ $v['dm'] }}" title="Visit website"><i class="fa fa-external-link"></i></a> </td>
-                        <td>{{ $v['cn'] }}</td>
+                        <td data-full="{{ $v['cn'] }}">{{ str_limit($v['cn'], 35, '...') }}</td>
                         <td>{{ $v['vl'] }}</td>
                         <td><a href="{{ url('list-query?filter-ip='.$v['ip']) }}" title="Click to filter by this Ip">{{ $v['ip'] }}</a>
                             <a target="_blank" href="http://whatismyipaddress.com/ip/{{ $v['ip'] }}"><i class="fa fa-info-circle"></i></a>  </td>
