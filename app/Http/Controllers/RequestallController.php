@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Requestall;
 use App\Fb;
 use App\Gg;
+use League\Flysystem\Exception;
 use phpDocumentor\Reflection\Types\Integer;
 use App\Other;
 use DB;
@@ -126,12 +127,19 @@ class RequestallController extends BaseController
                 foreach ($decryptedData as $k => $row) {
                     $domain = $row->dm;
                     if( !in_array($domain, $exclude) ){
-                        array_push($result, [
-                            'cn' => !empty($row->cn) ? $row->cn : '',
+                        $cn = !empty($row->cn) ? $row->cn : '';
+                        $cn = str_replace('[]', '', $cn);
+                        $vl = !empty($row->vl) ? $row->vl:'';
+                        if(is_array($vl)){
+                            $vl = $vl[0];
+                        }
+                        $el = [
+                            'cn' => $cn,
                             'dm' => $domain,
-                            'vl' => !empty($row->vl) ? $row->vl:'',
+                            'vl' => $vl,
                             'ip' => $ipAddress
-                        ]);
+                        ];
+                        array_push($result, $el);
                     }
                 }
             }
@@ -260,7 +268,12 @@ class RequestallController extends BaseController
                 $newArr[$key]['created_at'] = \Carbon\Carbon::now();
                 $newArr[$key]['updated_at'] = \Carbon\Carbon::now();
             }
-            Other::insert($newArr);
+            try{
+                Other::insert($newArr);
+            }catch (Exception $ex){
+                echo "<pre>";var_dump($ex);die;
+            }
+
             $data['insertedRows'] = count($query);
             $data['offset'] = (Int)$offset;
         }else{

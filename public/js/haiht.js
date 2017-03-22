@@ -141,5 +141,12 @@ $(document).ready(function () {
         });
     };
 
+    $('.value').click(function () {
+        var val = $(this).text();
+        var t = $(this).select();
+        document.execCommand('copy');
+        console.log(val, t);
+    });
+
     // End document ready
 });
